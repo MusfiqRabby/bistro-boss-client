@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 const Login = () => {
   
     const {signIn} = useContext(AuthContext)
-    const [disabled, setDisabled] = useState(true);
+    const [, setDisabled] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
 
