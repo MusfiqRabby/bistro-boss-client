@@ -9,6 +9,10 @@ import Secret from "../Shear/Secret/Secret";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../layouts/Dashboard";
 import Cart from "../pages/Dashboard/Cart/Cart";
+import AllUsers from "../pages/Dashboard/AllUsers";
+import AddItems from "../pages/Dashboard/AddItems/AddItems";
+import AdminRoute from "./AdminRoute";
+import ManageItems from "../pages/Dashboard/ManageItmes/ManageItems";
 
  export const router = createBrowserRouter([
     {
@@ -43,11 +47,27 @@ import Cart from "../pages/Dashboard/Cart/Cart";
     },
     {
       path: 'dashboard',
-      element: <Dashboard/>,
+      element: <PrivateRoutes><Dashboard/></PrivateRoutes>,
       children: [
+        
+        // normal users routes
         {
           path: 'cart',
           element: <Cart/>
+        },
+
+        // admin only routes
+        {
+          path: 'addItems', 
+           element: <AdminRoute><AddItems/></AdminRoute>
+        },
+        {
+          path: 'manageItems',
+          element: <AdminRoute><ManageItems/></AdminRoute>
+        },
+        {
+          path: 'users',
+          element: <AdminRoute><AllUsers/></AdminRoute>
         }
       ]
     }

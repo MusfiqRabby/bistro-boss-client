@@ -5,6 +5,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../components/socialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -106,8 +107,9 @@ const Login = () => {
         <div className="form-control mt-6">
           <input disabled={false} className="btn bg-[#D1A054] text-white" type="submit" value="Login" />
         </div>
+      <p className='m-auto '><small>New Here? <Link to='/signup' className='hover:underline hover:text-rose-700'> Sign-Up </Link> </small></p>
       </form>
-      <p><small>New Here? <Link to='/signup'> Sign-Up </Link> </small></p>
+  <SocialLogin></SocialLogin>
     </div>
   </div>
 </div>
