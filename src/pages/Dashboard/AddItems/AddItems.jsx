@@ -27,10 +27,11 @@ const AddItems = () => {
      const menuItem ={
         name: data.name,
         category: data.category,
-        price: parseFloat(data.price),
+        price: parseFloat(data.number),
         recipe: data.recipe,
         image: res.data.data.display_url
      }
+     
      // 
      const menuRes = await axiosSecure.post('/menu', menuItem);
      console.log('with image url', menuRes.data);

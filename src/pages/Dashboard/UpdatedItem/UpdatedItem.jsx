@@ -52,7 +52,7 @@ const UpdatedItem = () => {
  }
  console.log(res.data);
  };
-
+console.log(price);
   
     return (
         <div>
